@@ -7,10 +7,12 @@ public class Game {
     private static Board board;
     private static Player human;
     private static Player computer;
+    private static final String startingMessage = "Hello, welcome to my game of connect 4\nYour objective is to put 4 \"discs\" in a row\nYou are red (R) and your opponent is yellow (Y)\nGood luck";
     
     public static void main(String[] args) {
         human = new Human(sc);
         computer = new Computer();
+        System.out.println(startingMessage);
         // main game loop
         do {
             board = new Board(10, 20);

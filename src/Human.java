@@ -12,8 +12,15 @@ public class Human extends Player {
     @Override
     public void move(Board board) {
         System.out.println(board);
-        System.out.print("Which column do you want to add to: ");
-        int col = sc.nextInt();
+        int col = 0;
+        while (true) {
+            System.out.print("Enter the column you want to place your disc: ");
+            col = sc.nextInt();
+            if (col < 0 || col >= board.getRow(0).size())
+                System.out.println("Please enter a valid index");
+            else
+                break;
+        }
         int row = board.add(getName(), col);
         setLastCol(col);
         setLastRow(row);

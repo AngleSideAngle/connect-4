@@ -48,16 +48,14 @@ public class Board {
         vals.push(' ');
         vals.addAll(getBackwardsDiagonal(row, col));
         while(!vals.isEmpty()) {
-            System.out.print(vals.peek());
             if (vals.peek() == last)
                 repeat++;
             else
-                repeat = 0;
+                repeat = 1;
             last = vals.pop();
             if (repeat >= 4 && last != ' ')
                 return last;
         }
-        System.out.println();
         return ' ';
     }
 
